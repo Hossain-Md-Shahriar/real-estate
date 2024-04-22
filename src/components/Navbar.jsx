@@ -1,6 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => console.log("user logged out"))
+      .catch((error) => console.error(error));
+  };
+
   const navLinks = (
     <>
       <li>
@@ -35,10 +45,14 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 px-0 py-4">
+    <div className="navbar bg-white px-4 py-3 fixed top-0 right-0">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost lg:hidden pl-0"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -61,18 +75,33 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl rounded">daisyUI</a>
+        <a className="btn btn-ghost text-xl rounded px-0">daisyUI</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <NavLink
-          to="/login"
-          className="px-5 py-2 text-lg font-semibold text-white hover:text-[#0F4C75] bg-[#0F4C75] hover:bg-white border hover:border-[#0F4C75] transition-all duration-150 rounded"
-        >
-          Login
-        </NavLink>
+        {user ? (
+          <div>
+            <span>{user.email}</span>
+            <button onClick={handleLogOut} className="px-5 py-2 text-lg font-semibold text-white hover:text-[#0F4C75] bg-[#0F4C75] hover:bg-white border hover:border-[#0F4C75] transition-all duration-150 rounded">
+              Sign out
+            </button>
+          </div>
+        ) : (
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              `px-5 py-2 text-lg font-semibold ${
+                isActive
+                  ? "text-[#0F4C75] hover:text-white border border-[#0F4C75] rounded hover:bg-[#0F4C75] transition-all duration-150"
+                  : "text-white hover:text-[#0F4C75] bg-[#0F4C75] hover:bg-white border hover:border-[#0F4C75] transition-all duration-150 rounded"
+              }`
+            }
+          >
+            Login
+          </NavLink>
+        )}
       </div>
     </div>
   );

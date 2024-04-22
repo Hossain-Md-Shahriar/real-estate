@@ -3,6 +3,7 @@ import { SlSizeFullscreen } from "react-icons/sl";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import EstateCard from "../components/EstateCard";
 import { useLoaderData } from "react-router-dom";
+import Banner from "../components/Banner";
 
 const Home = () => {
   const estates = useLoaderData();
@@ -10,7 +11,7 @@ const Home = () => {
   return (
     <div className="">
       <Navbar />
-      <h2 className="my-24">home</h2>
+      <Banner />
       {/* estate section */}
       <div className="my-24">
         <h2 className="text-center text-3xl font-semibold mb-4">

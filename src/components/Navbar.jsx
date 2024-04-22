@@ -82,9 +82,14 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {user ? (
-          <div>
-            <span>{user.email}</span>
-            <button onClick={handleLogOut} className="px-5 py-2 text-lg font-semibold text-white hover:text-[#0F4C75] bg-[#0F4C75] hover:bg-white border hover:border-[#0F4C75] transition-all duration-150 rounded">
+          <div className="flex gap-3 items-center">
+            <div className="size-12 rounded-full overflow-hidden border-2">
+              <img className="size-full object-cover object-center" src={user.photoURL} alt="" />
+            </div>
+            <button
+              onClick={handleLogOut}
+              className="px-5 py-2 text-lg font-semibold text-white hover:text-[#0F4C75] bg-[#0F4C75] hover:bg-white border hover:border-[#0F4C75] transition-all duration-150 rounded"
+            >
               Sign out
             </button>
           </div>

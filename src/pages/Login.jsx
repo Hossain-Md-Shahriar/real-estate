@@ -6,7 +6,8 @@ import google from "../assets/google.svg";
 import github from "../assets/github.svg";
 
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
@@ -24,10 +25,32 @@ const Login = () => {
       .catch((error) => console.error(error));
   };
 
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const handleGithubSignIn = () => {
+    signInWithGithub()
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div>
       <Navbar />
-      <div className="md:w-1/2 lg:w-1/3 mx-auto mt-40 shadow-lg px-5 py-8 rounded-xl border-2">
+      <div className="md:w-1/2 lg:w-1/3 mx-auto mt-32 shadow-lg px-5 py-8 rounded-xl border-2">
         <h2 className="text-2xl font-medium mb-8 text-center">
           Login Your Account
         </h2>
@@ -62,23 +85,29 @@ const Login = () => {
             </button>
           </div>
         </form>
-        <p className="text-center pb-3 border-b mt-5">
+        <p className="py-3 text-center text-sm text-[#797979]">
+          Or continue with,
+        </p>
+        <div className="flex justify-center gap-5">
+          <div
+            onClick={handleGoogleSignIn}
+            className="cursor-pointer rounded-full border-2 flex justify-center items-center size-10 hover:shadow-lg transition-all duration-150"
+          >
+            <img className="w-7" src={google} alt="" />
+          </div>
+          <div
+            onClick={handleGithubSignIn}
+            className="cursor-pointer rounded-full border-2 flex justify-center items-center size-10 hover:shadow-lg transition-all duration-150"
+          >
+            <img className="w-7" src={github} alt="" />
+          </div>
+        </div>
+        <p className="text-center pt-3 border-t mt-5">
           Don't have an account?{" "}
           <Link to="/register" className="text-[#3282B8] font-semibold">
             Register
           </Link>
         </p>
-        <p className="py-3 text-center text-sm text-[#797979]">
-          Or continue with,
-        </p>
-        <div className="flex justify-center gap-5">
-          <div className="rounded-full border-2 flex justify-center items-center size-10 hover:shadow-lg transition-all duration-150">
-            <img className="w-7" src={google} alt="" />
-          </div>
-          <div className="rounded-full border-2 flex justify-center items-center size-10 hover:shadow-lg transition-all duration-150">
-            <img className="w-7" src={github} alt="" />
-          </div>
-        </div>
       </div>
     </div>
   );

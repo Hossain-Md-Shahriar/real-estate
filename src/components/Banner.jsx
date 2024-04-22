@@ -26,12 +26,12 @@ const Banner = () => {
       >
         <SwiperSlide>
           <div className="h-[600px] overflow-hidden rounded-2xl bg-[url(https://i.ibb.co/KX23sFy/resort.jpg)] bg-no-repeat bg-center bg-cover">
-            <div className="size-full bg-[#0000000b] p-28 flex items-center">
+            <div className="size-full bg-[#0000000b] p-14 lg:p-28 flex items-center">
               <div className="px-9 py-10 rounded-2xl backdrop-blur-md max-w-[500px] shadow-xl">
                 <h2 className="text-white text-4xl font-bold drop-shadow-lg">
                   Luxury Resort Retreat
                 </h2>
-                <p className="text-white mt-6 drop-shadow-lg">
+                <p className="text-white mt-6 drop-shadow-lg hidden md:block">
                   Experience ultimate relaxation and indulgence in this luxury
                   resort retreat surrounded by pristine landscapes. This idyllic
                   sanctuary offers luxurious accommodations, world-class
@@ -44,12 +44,12 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="h-[600px] overflow-hidden rounded-2xl bg-[url(https://i.ibb.co/Y2zWJ5f/villa.jpg)] bg-no-repeat bg-center bg-cover">
-            <div className="size-full bg-[#0000000b] p-28 flex items-center">
+            <div className="size-full bg-[#0000000b] p-14 lg:p-28 flex items-center">
               <div className="px-9 py-10 rounded-2xl backdrop-blur-md max-w-[500px] shadow-xl">
                 <h2 className="text-white text-4xl font-bold drop-shadow-lg">
                   Luxury Vineyard Villa
                 </h2>
-                <p className="text-white mt-6 drop-shadow-lg">
+                <p className="text-white mt-6 drop-shadow-lg hidden md:block">
                   Escape to wine country in this luxurious villa nestled amidst
                   rolling vineyards and picturesque landscapes. This exquisite
                   residence offers vineyard views, gourmet kitchen, and
@@ -61,12 +61,12 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="h-[600px] overflow-hidden rounded-2xl bg-[url(https://i.ibb.co/LtcRyq7/beachfront.jpg)] bg-no-repeat bg-center bg-cover">
-            <div className="size-full bg-[#0000000b] p-28 flex items-center">
+            <div className="size-full bg-[#0000000b] p-14 lg:p-28 flex items-center">
               <div className="px-9 py-10 rounded-2xl backdrop-blur-md max-w-[500px] shadow-xl">
                 <h2 className="text-white text-4xl font-bold drop-shadow-lg">
                   Private Beachfront Villa
                 </h2>
-                <p className="text-white mt-6 drop-shadow-lg">
+                <p className="text-white mt-6 drop-shadow-lg hidden md:block">
                   Escape to your own private paradise with this beachfront villa
                   offering unparalleled luxury and serenity. This exceptional
                   property features expansive ocean views, direct beach access,

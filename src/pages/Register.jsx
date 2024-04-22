@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
@@ -6,6 +6,7 @@ import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -30,12 +31,14 @@ const Register = () => {
       .catch((error) => {
         console.error(error);
       });
+
+      navigate("/");
   };
 
   return (
     <div>
       <Navbar />
-      <div className="md:w-1/2 lg:w-1/3 mx-auto mt-32 shadow-lg px-5 py-8 rounded-xl border-2">
+      <div className="md:w-1/2 lg:w-1/3 mx-auto mt-28 shadow-lg px-5 py-8 rounded-xl border-2">
         <h2 className="text-2xl font-medium mb-8 text-center">
           Register Your Account
         </h2>

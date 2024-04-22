@@ -1,12 +1,12 @@
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar";
 
 const UpdateProfile = () => {
   return (
     <div>
-        <Navbar />
+      <Navbar />
       update profile
     </div>
-  )
-}
+  );
+};
 
-export default UpdateProfile
+export default UpdateProfile;

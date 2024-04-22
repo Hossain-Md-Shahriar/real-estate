@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Oceanfront Penthouse",
+    "segment_name": "Penthouse",
+    "description": "Indulge in luxury living with this stunning oceanfront penthouse boasting panoramic views and modern amenities. This exquisite residence features a spacious layout, high-end finishes, and a private rooftop terrace perfect for entertaining.",
+    "price": "$7,500,000",
+    "status": "sale",
+    "area": "4000 sq ft",
+    "location": "Miami Beach, Florida",
+    "facilities": ["rooftop terrace", "infinity pool", "gourmet kitchen"],
+    "image": "https://i.ibb.co/9GwtgG5/penthouse.jpg"
+  },
+  {
+    "id": 2,
+    "estate_title": "Private Beachfront Villa",
+    "segment_name": "Beachfront properties",
+    "description": "Escape to your own private paradise with this beachfront villa offering unparalleled luxury and serenity. This exceptional property features expansive ocean views, direct beach access, and lavish amenities for the ultimate coastal retreat.",
+    "price": "$12,000,000",
+    "status": "rent",
+    "area": "6000 sq ft",
+    "location": "Malibu, California",
+    "facilities": ["private beach access", "infinity pool", "home theater"],
+    "image": "https://i.ibb.co/LtcRyq7/beachfront.jpg"
+  },
+  {
+    "id": 3,
+    "estate_title": "Luxury Resort Retreat",
+    "segment_name": "Resorts",
+    "description": "Experience ultimate relaxation and indulgence in this luxury resort retreat surrounded by pristine landscapes. This idyllic sanctuary offers luxurious accommodations, world-class amenities, and unparalleled service amidst breathtaking natural beauty.",
+    "price": "$20,000,000",
+    "status": "sale",
+    "area": "10000 sq ft",
+    "location": "Bora Bora, French Polynesia",
+    "facilities": ["spa", "private villas", "beachfront dining"],
+    "image": "https://i.ibb.co/KX23sFy/resort.jpg"
+  },
+  {
+    "id": 4,
+    "estate_title": "Private Island Paradise",
+    "segment_name": "Private islands",
+    "description": "Own your piece of paradise with this exclusive private island offering unparalleled privacy and luxury. This extraordinary retreat features pristine beaches, lush tropical gardens, and exquisite accommodations for the ultimate island escape.",
+    "price": "$50,000,000",
+    "status": "sale",
+    "area": "50 acres",
+    "location": "Exuma, Bahamas",
+    "facilities": ["private airstrip", "luxury villas", "marina"],
+    "image": "https://i.ibb.co/0Vyq4fb/island.jpg"
+  },
+  {
+    "id": 5,
+    "estate_title": "Mansion on the Hill",
+    "segment_name": "Mansions",
+    "description": "Live like royalty in this majestic mansion nestled atop a scenic hill offering breathtaking views. This grand estate boasts elegant interiors, expansive grounds, and luxurious amenities for unparalleled comfort and sophistication.",
+    "price": "$15,000,000",
+    "status": "rent",
+    "area": "12000 sq ft",
+    "location": "Bel Air, California",
+    "facilities": ["tennis court", "home theater", "guest house"],
+    "image": "https://i.ibb.co/Z19Qt8S/mansion.jpg"
+  },
+  {
+    "id": 6,
+    "estate_title": "Luxury Vineyard Villa",
+    "segment_name": "Villas",
+    "description": "Escape to wine country in this luxurious villa nestled amidst rolling vineyards and picturesque landscapes. This exquisite residence offers vineyard views, gourmet kitchen, and resort-style amenities for the ultimate wine country retreat.",
+    "price": "$8,500,000",
+    "status": "sale",
+    "area": "8000 sq ft",
+    "location": "Napa Valley, California",
+    "facilities": ["infinity pool", "vineyard views", "gourmet kitchen"],
+    "image": "https://i.ibb.co/Y2zWJ5f/villa.jpg"
+  }
+]

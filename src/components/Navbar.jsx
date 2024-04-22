@@ -27,25 +27,27 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/update"
-          className={({ isActive }) =>
-            `px-5 py-2 ${
-              isActive
-                ? "font-semibold hover:text-white text-[#0F4C75] border border-[#0F4C75] hover:bg-[#0F4C75] rounded"
-                : "font-normal text-[#131313e0] hover:bg-[#e6e6e6] rounded"
-            }`
-          }
-        >
-          Update Profile
-        </NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink
+            to="/update"
+            className={({ isActive }) =>
+              `px-5 py-2 ${
+                isActive
+                  ? "font-semibold hover:text-white text-[#0F4C75] border border-[#0F4C75] hover:bg-[#0F4C75] rounded"
+                  : "font-normal text-[#131313e0] hover:bg-[#e6e6e6] rounded"
+              }`
+            }
+          >
+            Update Profile
+          </NavLink>
+        </li>
+      )}
     </>
   );
 
   return (
-    <div className="navbar bg-white px-4 py-3 fixed top-0 right-0">
+    <div className="navbar bg-white px-4 py-3 fixed top-0 right-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <div
@@ -83,8 +85,14 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <div className="flex gap-3 items-center">
-            <div className="size-12 rounded-full overflow-hidden border-2">
-              <img className="size-full object-cover object-center" src={user.photoURL} alt="" />
+            <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
+              <div className="size-12 rounded-full overflow-hidden border-2">
+                <img
+                  className="size-full object-cover object-center"
+                  src={user.photoURL}
+                  alt=""
+                />
+              </div>
             </div>
             <button
               onClick={handleLogOut}

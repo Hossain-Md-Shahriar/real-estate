@@ -6,6 +6,7 @@ import google from "../assets/google.svg";
 import github from "../assets/github.svg";
 import { Slide, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signInUser, signInWithGoogle, signInWithGithub } =
@@ -25,7 +26,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.error(error);
-        toast.error("Email or Password Doesn't Match")
+        toast.error("Email or Password Doesn't Match");
       });
   };
 
@@ -53,6 +54,9 @@ const Login = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>GrandLuxe | Login</title>
+      </Helmet>
       <Navbar />
       <div className="md:w-1/2 lg:w-1/3 mx-auto mt-32 shadow-lg px-5 py-8 rounded-xl border-2 border-[#3282b857]">
         <h2 className="text-2xl font-medium mb-8 text-center">

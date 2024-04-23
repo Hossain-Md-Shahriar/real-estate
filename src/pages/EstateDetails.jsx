@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { Helmet } from "react-helmet-async";
 
 const EstateDetails = () => {
   const estates = useLoaderData();
@@ -19,6 +20,9 @@ const EstateDetails = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>GrandLuxe | {segment_name}</title>
+      </Helmet>
       <Navbar />
       <div className="flex flex-col lg:flex-row gap-12 mt-32">
         <div className="bg-[#1313130c] md:h-[500px] rounded-2xl flex justify-center items-center overflow-hidden">

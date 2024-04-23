@@ -93,7 +93,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl rounded px-0">daisyUI</a>
+        <Link to="/" className="btn btn-ghost text-xl font-bold rounded px-0">GrandLuxe</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
@@ -102,7 +102,7 @@ const Navbar = () => {
         {user ? (
           <div className="flex gap-3 items-center">
             <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
-              <div className="size-12 rounded-full overflow-hidden border-2">
+              <div className="size-12 rounded-full overflow-hidden border border-[#989898]">
                 <img
                   className="size-full object-cover object-center"
                   src={user.photoURL}

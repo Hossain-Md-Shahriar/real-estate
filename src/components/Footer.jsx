@@ -9,7 +9,7 @@ const Footer = () => {
             className="flex justify-center space-x-3 lg:justify-start"
           >
             <span className="self-center text-2xl font-semibold">
-              Brand name
+              GrandLuxe
             </span>
           </a>
         </div>

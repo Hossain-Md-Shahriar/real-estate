@@ -5,6 +5,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { Slide, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -17,15 +18,15 @@ const Register = () => {
     const password = e.target.password.value;
     console.log(name, email, password);
 
-    // check password validation
+    // password validation
     if (password.length < 6) {
-      toast.error("password should be at least 6 character or longer");
+      toast.error("Password must be at least 6 characters or longer");
       return;
     } else if (!/[A-Z]/.test(password)) {
-      toast.error("password should have atleast one uppercase character");
+      toast.error("Password must have an Uppercase character");
       return;
     } else if (!/[a-z]/.test(password)) {
-      toast.error("password should have atleast one lowercase character");
+      toast.error("Password must have a Lowercase character");
       return;
     }
 
@@ -51,6 +52,9 @@ const Register = () => {
 
   return (
     <div>
+        <Helmet>
+            <title>GrandLuxe | Register</title>
+        </Helmet>
       <Navbar />
       <div className="md:w-1/2 lg:w-1/3 mx-auto mt-28 shadow-lg px-5 py-8 rounded-xl border-2 border-[#3282b857]">
         <h2 className="text-2xl font-medium mb-8 text-center">

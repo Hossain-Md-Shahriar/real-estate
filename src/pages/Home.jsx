@@ -4,12 +4,16 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import EstateCard from "../components/EstateCard";
 import { useLoaderData } from "react-router-dom";
 import Banner from "../components/Banner";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const estates = useLoaderData();
 
   return (
-    <div className="">
+    <div>
+      <Helmet>
+        <title>GrandLuxe | Home</title>
+      </Helmet>
       <Navbar />
       <Banner />
       {/* estate section */}

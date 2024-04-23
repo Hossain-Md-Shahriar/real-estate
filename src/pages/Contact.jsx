@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "../components/Navbar";
 
 const Contact = () => {
   return (
     <div>
+      <Helmet>
+        <title>GrandLuxe | Contact</title>
+      </Helmet>
       <Navbar />
       <section className="py-8 md:py-16 mt-36 bg-gray-200 rounded-xl shadow-xl">
         <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
@@ -79,10 +83,7 @@ const Contact = () => {
             </label>
             <label className="block">
               <span className="mb-1">Message</span>
-              <textarea
-                rows="3"
-                className="block w-full rounded-md"
-              ></textarea>
+              <textarea rows="3" className="block w-full rounded-md"></textarea>
             </label>
             <button
               type="button"

@@ -4,11 +4,12 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import google from "../assets/google.svg";
 import github from "../assets/github.svg";
+import { Slide, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const { signInUser, signInWithGoogle, signInWithGithub } =
     useContext(AuthContext);
-  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -20,16 +21,19 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         e.target.reset();
-        navigate("/");
+        toast.success("Logged In Successfully!");
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error(error);
+        toast.error("Email or Password Doesn't Match")
+      });
   };
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
-        navigate("/");
+        toast.success("Logged In Successfully!");
       })
       .catch((error) => {
         console.error(error);
@@ -40,7 +44,7 @@ const Login = () => {
     signInWithGithub()
       .then((result) => {
         console.log(result.user);
-        navigate("/");
+        toast.success("Logged In Successfully!");
       })
       .catch((error) => {
         console.error(error);
@@ -109,6 +113,19 @@ const Login = () => {
           </Link>
         </p>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Slide}
+      />
     </div>
   );
 };

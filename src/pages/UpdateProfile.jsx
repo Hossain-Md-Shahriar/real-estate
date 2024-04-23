@@ -2,11 +2,11 @@ import Navbar from "../components/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { Slide, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const UpdateProfile = () => {
   const { user } = useContext(AuthContext);
-  const navigate = useNavigate();
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ const UpdateProfile = () => {
     })
       .then(() => {
         console.log("profile updated");
-        navigate("/update");
+        toast.success("Profile Updated Successfully!");
       })
       .catch();
   };
@@ -70,6 +70,19 @@ const UpdateProfile = () => {
           </div>
         </form>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Slide}
+      />
     </div>
   );
 };

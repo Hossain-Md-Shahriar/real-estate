@@ -1,12 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import { Slide, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
-  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -15,6 +16,18 @@ const Register = () => {
     const photo = e.target.photo.value;
     const password = e.target.password.value;
     console.log(name, email, password);
+
+    // check password validation
+    if (password.length < 6) {
+      toast.error("password should be at least 6 character or longer");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      toast.error("password should have atleast one uppercase character");
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      toast.error("password should have atleast one lowercase character");
+      return;
+    }
 
     createUser(email, password)
       .then((result) => {
@@ -25,14 +38,15 @@ const Register = () => {
           displayName: name,
           photoURL: photo,
         })
-          .then(() => console.log("profile updated"))
+          .then(() => {
+            console.log("profile updated");
+            toast.success("Registered Successfully!");
+          })
           .catch();
       })
       .catch((error) => {
         console.error(error);
       });
-
-      navigate("/");
   };
 
   return (
@@ -104,6 +118,19 @@ const Register = () => {
           </Link>
         </p>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Slide}
+      />
     </div>
   );
 };

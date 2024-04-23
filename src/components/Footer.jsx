@@ -19,7 +19,7 @@ const Footer = () => {
             <ul className="space-y-1">
               <li>
                 <a rel="noopener noreferrer" href="#">
-                  Service
+                  Servic
                 </a>
               </li>
               <li>

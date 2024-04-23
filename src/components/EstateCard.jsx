@@ -34,8 +34,8 @@ const EstateCard = ({ estate }) => {
       <div className="py-3 my-3 border-t-2 border-b-2">
         <h3 className="text-lg font-semibold">Facilities:</h3>
         <ul className="list-disc list-inside text-gray-600 pl-3">
-          {facilities.map((facility) => (
-            <li>{facility}</li>
+          {facilities.map((facility, index) => (
+            <li key={index}>{facility}</li>
           ))}
         </ul>
       </div>

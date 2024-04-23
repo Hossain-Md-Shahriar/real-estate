@@ -25,7 +25,7 @@ const EstateDetails = () => {
           <img
             className="w-full h-full object-cover object-center"
             src={image}
-            alt=""
+            alt={estate_title}
           />
         </div>
         <div className="w-full">

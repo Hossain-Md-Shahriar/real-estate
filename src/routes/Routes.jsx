@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import EstateDetails from "../pages/EstateDetails";
+import Contact from "../pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -19,12 +20,28 @@ const router = createBrowserRouter([
       },
       {
         path: "/estate/:id",
-        element: <PrivateRoute><EstateDetails /></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <EstateDetails />
+          </PrivateRoute>
+        ),
         loader: () => fetch("/luxury.json"),
       },
       {
         path: "/update",
-        element: <PrivateRoute><UpdateProfile /></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <UpdateProfile />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/contact",
+        element: (
+            <PrivateRoute>
+              <Contact />
+            </PrivateRoute>
+          ),
       },
       {
         path: "/login",

@@ -28,20 +28,36 @@ const Navbar = () => {
         </NavLink>
       </li>
       {user && (
-        <li>
-          <NavLink
-            to="/update"
-            className={({ isActive }) =>
-              `px-5 py-2 ${
-                isActive
-                  ? "font-semibold hover:text-white text-[#0F4C75] border border-[#0F4C75] hover:bg-[#0F4C75] rounded"
-                  : "font-normal text-[#131313e0] hover:bg-[#e6e6e6] rounded"
-              }`
-            }
-          >
-            Update Profile
-          </NavLink>
-        </li>
+        <>
+          <li>
+            <NavLink
+              to="/update"
+              className={({ isActive }) =>
+                `px-5 py-2 ${
+                  isActive
+                    ? "font-semibold hover:text-white text-[#0F4C75] border border-[#0F4C75] hover:bg-[#0F4C75] rounded"
+                    : "font-normal text-[#131313e0] hover:bg-[#e6e6e6] rounded"
+                }`
+              }
+            >
+              Update Profile
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                `px-5 py-2 ${
+                  isActive
+                    ? "font-semibold hover:text-white text-[#0F4C75] border border-[#0F4C75] hover:bg-[#0F4C75] rounded"
+                    : "font-normal text-[#131313e0] hover:bg-[#e6e6e6] rounded"
+                }`
+              }
+            >
+              Contact
+            </NavLink>
+          </li>
+        </>
       )}
     </>
   );

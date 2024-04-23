@@ -5,6 +5,7 @@ import UpdateProfile from "../pages/UpdateProfile";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
+import EstateDetails from "../pages/EstateDetails";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("luxury.json"),
+        loader: () => fetch("/luxury.json"),
+      },
+      {
+        path: "/estate/:id",
+        element: <PrivateRoute><EstateDetails /></PrivateRoute>,
+        loader: () => fetch("/luxury.json"),
       },
       {
         path: "/update",

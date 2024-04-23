@@ -1,8 +1,10 @@
 import { SlSizeFullscreen } from "react-icons/sl";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const EstateCard = ({ estate }) => {
   const {
+    id,
     estate_title,
     segment_name,
     description,
@@ -47,9 +49,11 @@ const EstateCard = ({ estate }) => {
           <p>{location}</p>
         </div>
       </div>
-      <button className="bg-[#2c76a8] hover:bg-[#1c5276] transition-all duration-150 text-white font-medium text-lg w-full rounded-xl p-3 mt-4">
-        View Property
-      </button>
+      <Link to={`/estate/${id}`}>
+        <button className="bg-[#2c76a8] hover:bg-[#1c5276] transition-all duration-150 text-white font-medium text-lg w-full rounded-xl p-3 mt-4">
+          View Property
+        </button>
+      </Link>
     </div>
   );
 };
